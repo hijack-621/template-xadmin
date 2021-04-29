@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LRC同步歌词</title>
+    <link rel="stylesheet" href="../css/own.css">
+    <link rel="stylesheet" href="../css/lrc.css">
+
+</head>
+<body>
+    <div class="div-bg">
+        <h2 class="t-h2">LRC同步歌词</h2>
+        <audio src="./resources/周杰伦 - 暗号.mp3" autoplay controls id="ao"></audio>
+        <div class="lrc-wrapper" id="lrc-content">
+
+        </div>
+    </div>
+    <script src="../js/lrc.js"></script>
+    <script type="text/javascript">
+        let lrcs = new Lrc({
+            wrapperId:'lrc-content',//歌词容器
+            lrcUrl:'./resources/anhao.lrc',
+            row:'7',
+            lineHeight:55,
+            delay:-0.9,
+            getCurrentPlayTime: function(){ return ao.currentTime || 0; }
+        })
+    </script>
+</body>
+</html>
